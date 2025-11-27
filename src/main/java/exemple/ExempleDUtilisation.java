@@ -1,15 +1,11 @@
 package exemple;
 
-import bandeau.Bandeau;
-
 import java.awt.Color;
 import java.awt.Font;
 
-public class ExempleDUtilisation {
+import bandeau.Bandeau;
 
-    public static void main(String[] args) {
-        new ExempleDUtilisation().exemple();
-    }
+public class ExempleDUtilisation {
 
     public void exemple() {
         Bandeau bandeau1 = new Bandeau();
@@ -43,7 +39,7 @@ public class ExempleDUtilisation {
         bandeau1.setMessage("On va tourner");
         bandeau1.sleep(1000);
         bandeau1.setMessage("On tourne de 45°...");
-        bandeau1.setRotation(Math.PI / 2.0f);
+        bandeau1.setRotation(Math.PI / 4.0f);
         bandeau1.sleep(1000);
         bandeau1.setRotation(0.0f);
 

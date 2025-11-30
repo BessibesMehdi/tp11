@@ -1,26 +1,28 @@
 package exemple;
 
 import java.awt.Color;
-import java.awt.Font;
 
 import bandeau.Bandeau;
 
-public class EffetEpileptique {
-    public void effetEpileptique(Bandeau bandeau) {
-        for (int i = 0; i < 100; i++) {
-            // Fond noir, texte blanc
-            bandeau.setBackground(Color.BLACK);
-            bandeau.setFont(new Font("Arial", Font.BOLD, 20));
-            bandeau.setForeground(Color.WHITE);
-            bandeau.sleep(10);
 
-            // Fond jaune, texte noir
-            bandeau.setBackground(Color.YELLOW);
-            bandeau.setFont(new Font("Arial", Font.BOLD, 20));
-            bandeau.setForeground(Color.BLACK);
-            bandeau.sleep(10);
+public class EffetEpileptique implements Effet {
+    
+    
+    public void appliquer(Bandeau bandeau) {
+        for (int i = 0; i < 20; i++) {
+            if (i % 2 == 0) {
+                bandeau.setBackground(Color.BLACK);
+                bandeau.setForeground(Color.WHITE);
+            } else {
+                bandeau.setBackground(Color.YELLOW);
+                bandeau.setForeground(Color.BLACK);
+            }
+            bandeau.sleep(100);
         }
     }
+    
+    @Override
+    public String getNom() {
+        return "Epileptique";
+    }
 }
-
-
